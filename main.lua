@@ -1,29 +1,37 @@
-require "classes.colors" require "classes.events"
+--UTILS
+require "utils.colors" require "utils.events"
+--CLASSES
 assets = require('classes.cargo').init('assets')
 JSON = (loadfile "classes/JSON.lua")()
+--VARS
 local lg = love.graphics
 game = {}
+game.pause = true
+game.debug = false
+game.time = 0
+game.dims = {}
 
 function love.load()
-  game.pause = true
-  game.debug = false
-  game.time = 0
+  game.dims.x = lg.getWidth()
+  game.dims.y = lg.getHeight()
   --JUNK BELOW
-  lg.setBackgroundColor(orange)
-  x = lg.getWidth()/2 - assets.princessPixel:getWidth()/2
-  y = lg.getHeight()/2 - assets.princessPixel:getHeight()/2
+  lg.setBackgroundColor(colors.orange)
   delta = 0
 end
 
 function love.update(dt)
   game.time = game.time + dt
   --JUNK BELOW
-  delta = math.sin(1000 * game.time)
+  x = game.dims.x/2 - assets.princessPixel:getWidth()/2
+  y = game.dims.y/2 - assets.princessPixel:getHeight()/2
 end
 
 function love.draw()
   --JUNK BELOW
-  lg.draw(assets.princessPixel, x + delta, y + delta)
+  if game.debug == true then
+    lg.print("FPS: "..love.timer.getFPS(), 10, 10)
+  end
+  lg.draw(assets.princessPixel, x + 10*math.sin(game.time), y + 10*math.sin(game.time))
 end
 
 function save(table, fileName)

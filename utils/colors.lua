@@ -1,0 +1,11 @@
+colors = {}
+colors.blue = {31, 119, 180}
+colors.orange = {255, 127, 14}
+colors.green = {44, 160, 44}
+colors.red = {214, 39, 40}
+colors.purple = {148, 103, 189}
+colors.brown = {140, 86, 75}
+colors.pink = {227, 119, 194}
+colors.grey = {127, 127, 127}
+colors.yellow = {188, 189, 34}
+colors.cyan = {23, 190, 207}

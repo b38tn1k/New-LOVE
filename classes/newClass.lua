@@ -1,3 +1,5 @@
+-- Just run lua newClass.lua and follow the prompts!
+-- creates a scaffold new class!
 io.write('New Class Tool\n')
 io.write('What is the name of the New Class (camelCase)?\n')
 name = io.read()
