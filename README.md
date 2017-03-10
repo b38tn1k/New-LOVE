@@ -2,7 +2,7 @@
 My version of a new LÖVE project. Whenever I set up a [LÖVE](https://love2d.org) project I make something similar to this:
 
 - [cargo](https://github.com/bjornbytes/cargo) provides easy asset management
-- bewClass script makes creating lua objects quicker
+- newClass script makes creating lua objects quicker
 - basic color table so I don't have to remember colors
 - exposed conf.lua file
 - [JSON.lua](http://regex.info/blog/lua/json) allows for serialization of simple tables for saving and loading game state
